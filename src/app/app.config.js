@@ -22,9 +22,9 @@ import mdiIconSet from '../svg/mdi.svg';
 
 /* eslint-enable import/no-unresolved, import/default */
 
-const PRIMARY_BACKGROUND_COLOR = "#305680";//#2856b6";//"#3f51b5";
-const SECONDARY_BACKGROUND_COLOR = "#527dad";
-const HUE3_COLOR = "#a7c1de";
+const PRIMARY_BACKGROUND_COLOR = "#022a39";//#2856b6";//"#3f51b5";
+const SECONDARY_BACKGROUND_COLOR = "#00c2f0";
+const HUE3_COLOR = "#009bbf";
 
 /*@ngInject*/
 export default function AppConfig($provide,
@@ -77,6 +77,40 @@ export default function AppConfig($provide,
     $mdIconProvider.iconSet('mdi', mdiIconSet);
 
     configureTheme();
+
+    function eclipseTheme() {
+        var tbPrimaryPalette = $mdThemingProvider.extendPalette('indigo', {
+            '500': PRIMARY_BACKGROUND_COLOR,
+            '600': SECONDARY_BACKGROUND_COLOR,
+            'A100': HUE3_COLOR
+        });
+
+        var tbAccentPalette = $mdThemingProvider.extendPalette('deep-orange');
+
+        $mdThemingProvider.definePalette('tb-primary', tbPrimaryPalette);
+        $mdThemingProvider.definePalette('tb-accent', tbAccentPalette);
+
+        var tbDarkPrimaryPalette = $mdThemingProvider.extendPalette('tb-primary', {
+            '500': '#9fa8da'
+        });
+
+        var tbDarkPrimaryBackgroundPalette = $mdThemingProvider.extendPalette('tb-primary', {
+            '800': PRIMARY_BACKGROUND_COLOR
+        });
+
+        $mdThemingProvider.definePalette('tb-dark-primary', tbDarkPrimaryPalette);
+        $mdThemingProvider.definePalette('tb-dark-primary-background', tbDarkPrimaryBackgroundPalette);
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('tb-primary')
+            .accentPalette('tb-accent');
+
+        $mdThemingProvider.theme('tb-dark')
+            .primaryPalette('tb-dark-primary')
+            .accentPalette('tb-accent')
+            .backgroundPalette('tb-dark-primary-background')
+            .dark();
+    }
 
     function blueGrayTheme() {
         var tbPrimaryPalette = $mdThemingProvider.extendPalette('blue-grey');
@@ -134,10 +168,12 @@ export default function AppConfig($provide,
 
     function configureTheme() {
 
-        var theme = 'indigo';
+        var theme = 'eclipse';
 
         if (theme === 'blueGray') {
             blueGrayTheme();
+        } else if (theme === 'eclipse') {
+            eclipseTheme();
         } else {
             indigoTheme();
         }

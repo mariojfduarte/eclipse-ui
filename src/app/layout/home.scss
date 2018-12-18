@@ -61,9 +61,10 @@ md-sidenav.tb-site-sidenav {
   width: 250px;
 }
 
-md-icon.tb-logo-title {
+.tb-logo-title {
+  display: inline-block;
   width: 200px;
-  height: 36px;
+  height: 60px;
 }
 
 .tb-nav-header {
