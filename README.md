@@ -1,10 +1,10 @@
-# ThingsBoard 
+# Eclipse - ThingsBoard Custmized UI
 [![Join the chat at https://gitter.im/thingsboard/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/thingsboard/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/thingsboard/thingsboard.svg?branch=master)](https://travis-ci.org/thingsboard/thingsboard)
 
 ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management.
 
-<img src="./img/logo.png?raw=true" width="100" height="100">
+<img src=".src/assets/artwork/logo.jpeg?raw=true" width="200" height="60">
 
 ## Documentation
 
