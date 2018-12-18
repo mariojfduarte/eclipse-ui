@@ -3,17 +3,37 @@
 Custimzed UI for ThingsBoard IoT platform.
 [![Logo eclipse](./src/assets/artwork/logo_b.png "Logo Eclipse")](./src/assets/artwork/logo_b.png)
 
-## Getting Started
+## Running Thingsboard UI
 
+Eclipse UI is forwarding all request at the ThingsBoard demo server by default. To get started, simply run the command bellow.
+
+```
+git clone https://github.com/mariojfduarte/eclipse-ui.git
+
+cd eclipse-ui/master
+
+npm install
+
+npm start
+
+```
+
+Using Docker:
+
+```
+To build:
+docker build -t NAME .
+
+
+To run:
+docker run -d -p 3000:3000 NAME
+```
 
 
 ## Screenshots
 [**Home screenshot**](./src/assets/artwork/home.png)
 [![Home screenshot](./src/assets/artwork/home.png "Home Screenshot")](./src/assets/artwork/home.png)
 
-## Running Thingsboard UI
-
-Collect and Visualize your IoT data in minutes by following this [guide](https://thingsboard.io/docs/getting-started-guides/helloworld/).
 
 ## ThingsBoard
 [![Join the chat at https://gitter.im/thingsboard/chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/thingsboard/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
