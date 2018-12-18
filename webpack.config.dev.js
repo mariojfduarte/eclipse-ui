@@ -18,7 +18,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin')
+//const StyleLintPlugin = require('stylelint-webpack-plugin')
 
 const webpack = require('webpack');
 const path = require('path');
@@ -78,7 +78,7 @@ module.exports = {
             title: 'EclipsePlatform',
             inject: 'body',
         }),
-        new StyleLintPlugin(),
+        //new StyleLintPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.NoErrorsPlugin(),
         new ExtractTextPlugin('style.[contentHash].css', {
