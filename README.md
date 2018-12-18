@@ -1,11 +1,10 @@
 # Eclipse - ThingsBoard Custmized UI
 
 asd
-[**Smart metering**](./src/assets/artwork/logo.jpeg)
 
 ## Screenshots
-[**Smart metering**](./src/assets/artwork/home.png)
-
+[**Home screenshot**](./src/assets/artwork/home.png)
+[![Home screenshot](./src/assets/artwork/home.png "Home Screenshot")](./src/assets/artwork/home.png)
 
 ## Running Thingsboard UI
 
