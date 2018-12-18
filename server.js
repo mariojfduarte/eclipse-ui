@@ -27,10 +27,12 @@ const config = require('./webpack.config');
 const express = require('express');
 const http = require('http');
 const httpProxy = require('http-proxy');
-const forwardHost = 'localhost';
-const forwardPort = 8080;
+//const forwardHost = 'localhost';
+//const forwardPort = 8080;
+const forwardHost = process.env.FORWARDHOST || '104.196.24.70'; // Thingsboard Demo Server
+const forwardPort = process.env.FORWARDPORT || 80;
 
-const ruleNodeUiforwardHost = 'localhost';
+const ruleNodeUiforwardHost = '0.0.0.0';
 const ruleNodeUiforwardPort = 8080;
 
 const app = express();
