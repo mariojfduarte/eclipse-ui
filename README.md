@@ -3,6 +3,10 @@
 Custimzed UI for ThingsBoard IoT platform.
 [![Logo eclipse](./src/assets/artwork/logo_b.png "Logo Eclipse")](./src/assets/artwork/logo_b.png)
 
+## Getting Started
+
+
+
 ## Screenshots
 [**Home screenshot**](./src/assets/artwork/home.png)
 [![Home screenshot](./src/assets/artwork/home.png "Home Screenshot")](./src/assets/artwork/home.png)
