@@ -1,6 +1,7 @@
 # Eclipse - ThingsBoard Custmized UI
 
-asd
+Custimzed UI for ThingsBoard IoT platform.
+[![Logo eclipse](./src/assets/artwork/logo_b.png "Logo Eclipse")](./src/assets/artwork/logo_b.png)
 
 ## Screenshots
 [**Home screenshot**](./src/assets/artwork/home.png)
