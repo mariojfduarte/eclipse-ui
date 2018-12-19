@@ -24,7 +24,7 @@ const path = require('path');
 const dirTree = require('directory-tree');
 const jsonminify = require("jsonminify");
 
-const PUBLIC_RESOURCE_PATH = '/target/';
+const PUBLIC_RESOURCE_PATH = '/static/';
 
 var langs = [];
 dirTree('./src/app/locale/', {extensions:/\.json$/}, (item) => {
@@ -55,8 +55,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
-                from: './src/favicon.ico',
-                to: 'favicon.ico'
+                from: './src/thingsboard.ico',
+                to: 'thingsboard.ico'
             },
             {
                 from: './src/app/locale',
@@ -70,7 +70,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: '../index.html',
-            title: 'EclipsePlatform',
+            title: 'ThingsBoard',
             inject: 'body',
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),

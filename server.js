@@ -35,7 +35,7 @@ const forwardPort = process.env.FORWARDPORT || 80;
 console.log(forwardHost);
 console.log(forwardPort);
 
-const ruleNodeUiforwardHost = '0.0.0.0';
+const ruleNodeUiforwardHost = 'localhost';
 const ruleNodeUiforwardPort = 8080;
 
 const app = express();
