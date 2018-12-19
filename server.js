@@ -23,7 +23,7 @@ const historyApiFallback = require("connect-history-api-fallback");
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./webpack.config');
-require('dotenv').config();
+//require('dotenv').config();
 const express = require('express');
 const http = require('http');
 const httpProxy = require('http-proxy');
