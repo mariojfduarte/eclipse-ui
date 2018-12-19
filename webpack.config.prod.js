@@ -55,8 +55,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
-                from: './src/thingsboard.ico',
-                to: 'thingsboard.ico'
+                from: './src/favicon.ico',
+                to: 'favicon.ico'
             },
             {
                 from: './src/app/locale',
@@ -70,7 +70,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: '../index.html',
-            title: 'ThingsBoard',
+            title: 'EclipseIot',
             inject: 'body',
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
