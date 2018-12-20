@@ -89,7 +89,9 @@ app.all('/static/rulenode/*', (req, res) => {
 });
 
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'src/index.html'));
+    //res.sendFile(path.join(__dirname, 'src/index.html'));
+    res.sendFile(path.join(__dirname, 'target/generated-resources/public/index.html'));
+    
 });
 
 server.on('upgrade', (req, socket, head) => {
