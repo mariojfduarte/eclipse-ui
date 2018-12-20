@@ -137,7 +137,7 @@ export default function AppRun($rootScope, $window, $injector, $location, $log, 
             }
         })
 
-        $rootScope.pageTitle = 'ThingsBoard';
+        $rootScope.pageTitle = 'Eclipse Iot';
 
         $rootScope.stateChangeSuccessHandle = $rootScope.$on('$stateChangeSuccess', function (evt, to, params) {
             if (userService.isPublic() && to.name === 'dashboard') {
@@ -146,9 +146,9 @@ export default function AppRun($rootScope, $window, $injector, $location, $log, 
             }
             if (angular.isDefined(to.data.pageTitle)) {
                 $translate(to.data.pageTitle).then(function (translation) {
-                    $rootScope.pageTitle = 'Eclipse IoT | ' + translation;
+                    $rootScope.pageTitle = 'Eclipse Iot | ' + translation;
                 }, function (translationId) {
-                    $rootScope.pageTitle = 'Eclipse IoT | ' + translationId;
+                    $rootScope.pageTitle = 'Eclipse Iot | ' + translationId;
                 });
             }
         })
