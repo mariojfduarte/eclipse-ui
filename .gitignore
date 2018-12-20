@@ -1,5 +1,5 @@
 node_modules/
-target/
+
 .tern-project
 .idea/
 .env
