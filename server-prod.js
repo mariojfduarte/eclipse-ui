@@ -7,6 +7,7 @@ const historyApiFallback = require("connect-history-api-fallback");
 
 const forwardHost = process.env.FORWARDHOST || '104.196.24.70'; // Thingsboard Demo Server
 const forwardPort = process.env.FORWARDPORT || 80;
+const PORT = process.env.PORT || 3000;
 
 console.log(forwardHost);
 console.log(forwardPort);
@@ -15,7 +16,6 @@ const ruleNodeUiforwardHost = 'localhost';
 const ruleNodeUiforwardPort = 8080;
 const app = express();
 const server = http.createServer(app);
-const PORT = 3000;
 
 app.use(historyApiFallback());
 app.use(express.static(path.join(__dirname, 'target/generated-resources/public')));
