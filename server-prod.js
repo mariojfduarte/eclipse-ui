@@ -1,34 +1,10 @@
-/*
- * Copyright © 2016-2018 The Thingsboard Authors
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* eslint-disable import/no-commonjs */
-/* eslint-disable global-require */
-/* eslint-disable import/no-nodejs-modules */
 
-const path = require('path');
-const webpack = require('webpack');
-const historyApiFallback = require("connect-history-api-fallback");
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const config = require('./webpack.config');
-//require('dotenv').config();
-const express = require('express');
+var express = require('express');
+var path = require('path');
 const http = require('http');
 const httpProxy = require('http-proxy');
-//const forwardHost = 'localhost';
-//const forwardPort = 8080;
+const historyApiFallback = require("connect-history-api-fallback");
+
 const forwardHost = process.env.FORWARDHOST || '104.196.24.70'; // Thingsboard Demo Server
 const forwardPort = process.env.FORWARDPORT || 80;
 
@@ -37,21 +13,12 @@ console.log(forwardPort);
 
 const ruleNodeUiforwardHost = 'localhost';
 const ruleNodeUiforwardPort = 8080;
-
 const app = express();
 const server = http.createServer(app);
-
 const PORT = 3000;
 
-const compiler = webpack(config);
-
 app.use(historyApiFallback());
-app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
-app.use(webpackHotMiddleware(compiler));
-
-const root = path.join(__dirname, '/src');
-
-app.use('/static', express.static(root));
+app.use(express.static(path.join(__dirname, 'target/generated-resources/public')));
 
 const apiProxy = httpProxy.createProxyServer({
     target: {
@@ -88,12 +55,6 @@ app.all('/static/rulenode/*', (req, res) => {
     ruleNodeUiApiProxy.web(req, res);
 });
 
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'src/index.html'));
-    //res.sendFile(path.join(__dirname, 'target/generated-resources/publicc/index.html'));
-    
-});
-
 server.on('upgrade', (req, socket, head) => {
     apiProxy.ws(req, socket, head);
 });
@@ -105,3 +66,5 @@ server.listen(PORT, '0.0.0.0', (error) => {
         console.info(`==> 🌎  Listening on port ${PORT}. Open up http://localhost:${PORT}/ in your browser.`);
     }
 });
+
+

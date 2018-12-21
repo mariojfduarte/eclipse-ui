@@ -70,7 +70,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: '../index.html',
-            title: 'EclipseIot',
+            title: 'Eclipse Iot',
             inject: 'body',
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
