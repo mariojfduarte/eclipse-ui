@@ -9,8 +9,11 @@ const forwardHost = process.env.FORWARDHOST || '104.196.24.70'; // Thingsboard D
 const forwardPort = process.env.FORWARDPORT || 80;
 const PORT = process.env.PORT || 3000;
 
+const nodeEnv = process.env.NODE_ENV || "Debug Mode";
+
 console.log(forwardHost);
 console.log(forwardPort);
+console.log(nodeEnv);
 
 const ruleNodeUiforwardHost = 'localhost';
 const ruleNodeUiforwardPort = 8080;
@@ -18,7 +21,7 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(historyApiFallback());
-app.use(express.static(path.join(__dirname, 'target/generated-resources/public')));
+app.use(express.static(path.join(__dirname, '')));
 
 const apiProxy = httpProxy.createProxyServer({
     target: {
