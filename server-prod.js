@@ -21,7 +21,7 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(historyApiFallback());
-app.use(express.static(path.join(__dirname, '')));
+app.use(express.static(path.join(__dirname, 'target/generated-resources/public')));
 
 const apiProxy = httpProxy.createProxyServer({
     target: {
