@@ -87,7 +87,7 @@ function LoginService($http, $q) {
 
     function activate(activateToken, password) {
         var deferred = $q.defer();
-        var url = '/api/noauth/activate';
+        var url = ':9090/api/noauth/activate';
         $http.post(url, {activateToken: activateToken, password: password}).then(function success(response) {
             deferred.resolve(response);
         }, function fail() {
